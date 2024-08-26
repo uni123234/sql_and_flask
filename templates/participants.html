@@ -1,0 +1,27 @@
+{% extends "index.html" %} {% block add_style %} table, th, tr, td { border: 1px
+solid black; } table { width: 100%; } {% endblock add_style %} {% block content
+%}
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Email</th>
+		<th>City</th>
+		<th>Order</th>
+		<th>Phone</th>
+	</tr>
+	{% for participant in participants %}
+	<tr>
+		<td>{{ participant[0] }}</td>
+		<td>{{ participant[1] }}</td>
+		{% if participant[2] %}
+		<td>{{ cities[participant[2]] }}</td>
+		{% else %}
+		<td>None</td>
+		{% endif %}
+		<td>{{ participant[3] }}</td>
+		<td>{{ participant[4] }}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock content %} tr - table row th - table header td - table data
+[(),(),()]

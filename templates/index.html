@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Flask and Sqlite3</title>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for( 'static', filename='style.css')}}"
+		/>
+	</head>
+	<style>
+		{% block add_style %}
+		{% endblock add_style %}
+	</style>
+	<body>
+		{% block content %}
+		<h1>Build Web App with Sqlite3 and Flask</h1>
+		<button
+			class="btn"
+			type="button"
+			onclick="window.location.href='{{ url_for('join') }}';"
+		>
+			Fill form to get product
+		</button>
+		<button
+			class="btn"
+			type="button"
+			onclick="window.location.href='{{ url_for('participants') }}';"
+		>
+			Check Buyers list
+		</button>
+		{% endblock content %}
+	</body>
+</html>
